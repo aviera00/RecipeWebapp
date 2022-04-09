@@ -2,7 +2,7 @@
  
 ## Team Members + Roles:
 - Shayne Conner --> Search Bar
-- Andrew Viera  --> Backend/Database, Search Bar 
+- Andrew Viera  --> Backend/Database, Search Bar, Front-end, Admin 
 - Lauren Mannion  --> Front End Layout/Functionality 
 - Hana Kenworthy --> Admin
 - Denice Omene  --> Log In 
