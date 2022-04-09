@@ -1,0 +1,116 @@
+extends layout 
+
+block content
+
+  .container
+
+    form#createAccount
+      h1.formTitle Create Account
+      #signupError.errorMessage Could not create account. Please try again
+      .formInput
+        input#signupUsername.inputInfo(type='text' autofocus='' placeholder='Username')
+        #usernameError.errorMessage Username must be at least 3 characters
+      .formInput
+        input#signupPassword.inputInfo(type='password' autofocus='' placeholder='Password')
+        #passwordError.errorMessage Password must be at least 8 characters
+      .formInput
+        input#confirmPassword.inputInfo(type='password' autofocus='' placeholder='Confirm password')
+        #confirmError.errorMessage Passwords must match
+      button#signUp.formButton(type='submit')
+        a#signupLink.formButton Sign Up
+      p.formLinks
+        a#loginLink.formLink Already have an account? Sign in
+    form#login
+      h1.formTitle Sign In
+      #loginError.errorMessage Incorrect username and password combination.
+      .formInput
+        input#username.inputInfo(type='text' autofocus='' placeholder='Username')
+      .formInput
+        input#password.inputInfo(type='password' autofocus='' placeholder='Password')
+      button#signIn.formButton(type='submit') 
+        a#signinLink.formButton Sign In
+      p.formLinks
+        a#createAccountLink.formLink Don&apos;t have an account? Sign up
+  script.
+    document.addEventListener("DOMContentLoaded", () => {
+      const bcrypt = require('bcrypt');
+      const createAccountForm = document.getElementById("createAccount");
+      const loginForm = document.getElementById("login");
+      
+      var user = "";
+      var pwd = "";
+      const salt = 4;
+
+      var signUpBtn = document.getElementById("signUp");
+      signUpBtn.addEventListener('submit', x => {
+        x.preventDefault();
+
+        if(document.getElementById("signupUsername").value.length < 3){
+          document.getElementById("usernameError").style.display = "block";
+        }
+        else{
+          if(document.getElementById("signupPassword").value.length < 8){
+            document.getElementById("passwordError").style.display = "block";
+          }
+          else{
+            if(document.getElementById("signupPassword").value == document.getElementById("confirmPassword")){
+              
+              user = document.getElementById("signupUsername").value;
+              password = document.getElementById("signupPassword").value;
+
+              let formData = new FormData(this);
+               
+              bcrypt.hash(password, salt).then(function(hash) {
+                formData.set("password", hash);
+              });
+
+              fetch('/users', {method: "post", body: formData})
+              .then(x => x.json())
+              .then(function(userInfo){
+                console.log(userInfo);
+              })
+              .catch(function(err){
+                document.getElementById("signupError").style.display = "block";
+              });
+
+              document.getElementById("signupLink").href = "./"
+            }
+            else{
+              document.getElementById("confirmError").style.display = "block";
+            }
+          }       
+        }
+      });
+    
+      document.getElementById("createAccountLink").onclick = x => {
+        x.preventDefault();
+        loginForm.style.display = "none";
+        createAccountForm.style.display = "block";
+      };
+
+      document.getElementById("loginLink").onclick = x => {
+        x.preventDefault();
+        createAccountForm.style.display = "none";
+        loginForm.style.display = "block";
+      };
+
+      var loginBtn = document.getElementById("signIn");
+      loginBtn.addEventListener('submit', x => {
+        x.preventDefault();
+        if(document.getElementById("username").value==user && document.getElementById("password").value==password)
+        let formData = new FormData(this);
+        let hashCompare = bcrypt.compare(password, hash).then(function(result) {
+          if(result==bcrypt.compare(document.getElementById("password").value, hash).then(function(result) {
+            return result;
+          })){
+            document.getElementById("signinLink").href = "./";
+          }
+          else{
+            document.getElementById("loginError").style.display = "block";
+          }
+        });
+      });
+    });
+
+ 
+

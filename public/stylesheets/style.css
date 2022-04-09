@@ -1,0 +1,313 @@
+.header {
+  padding: 80px; /* some padding */
+  text-align: center; /* center the text */
+  background-image: url("http://sarasmarketbakery.com/wp-content/uploads/2014/02/bakery-header3.jpg"); /* green background */
+  color: whitesmoke; /* white text color */
+  -webkit-text-stroke: 1px black;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden; /* Hide overflow */
+  background-color: #ffdab9; /* Dark background color */
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left; /* Make sure that the links stay side-by-side */
+  display: block; /* Change the display to block, for responsive reasons (see below) */
+  color: white; /* White text color */
+  text-align: center; /* Center the text */
+  padding: 14px 20px; /* Add some padding */
+  text-decoration: none; /* Remove underline */
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right; /* Float a link to the right */
+}
+
+/* Change color on hover/mouse-over */
+.navbar a:hover {
+  background-color: #ffcba4; /* Grey background color */
+  color: black; /* Black text color */
+}
+
+.search input[type=text]{
+        width:300px;
+        height:25px;
+        border-radius:0px;
+        border: none;
+        position: relative;
+    }
+         
+    .search{
+        float:right;
+        margin:10px;
+    }
+         
+    .search button{
+        background-color: #ffa089;
+        z-index: 2;
+        color: #f2f2f2;
+        float: right;
+        height: 25px;
+        padding: 2px 10px;
+        margin-right: 16px;
+        font-size: 10px;
+        border: none;
+        cursor: pointer;
+        border-radius: 0px;
+    }
+
+h1{
+  color: whitesmoke; /* white text color */
+  -webkit-text-stroke: 1px black;
+  font-family: "Georgia";
+  font-size: 40px;
+}
+h2 {
+  font-family: "Georgia";
+  text-align: center;
+  color: #ff9966;
+  -webkit-text-stroke: 1.5px #ff9966;
+  font-size: 30px;
+}
+
+h3{
+  font-family: "Georgia";
+  margin-left: 10px;
+  color: #ff9966;
+  -webkit-text-stroke: 1.5px #ff9966;
+  font-size: 23px;
+}
+
+h5{
+  font-family: "Georgia";
+  margin-left: 10px;
+  color: #ff9966;
+  -webkit-text-stroke: 1.5px #ff9966;
+  font-size: 23px;
+}
+
+h6{
+  font-family: "Georgia";
+  margin-left: 10px;
+  color: #ff9966;
+  -webkit-text-stroke: 1.5px #ff9966;
+  font-size: 23px;
+}
+
+p{
+  font-family: "Georgia";
+  text-align: center;
+  color: #ff9966; /* white text color */
+  font-size: 15px;
+  font-weight: bold;
+}
+
+p1{
+  font-family: "Georgia";
+  color: #ff9966; /* white text color */
+  font-size: 15px;
+  font-weight: bold;
+}
+
+body{
+  background-color: #ffefd5
+}
+
+body {
+  --color-primary: #009579;
+  --color-primary-dark: #007f67;
+  --color-secondary: #252c6a;
+  --color-error: #cc3333;
+  --color-success: #4bb544;
+  border-radius: 4px;
+
+  margin: 0;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+}
+
+.container {
+    width: 400px;
+    max-width: 400px;
+    margin: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    background: #ffffff;
+    display: flex;
+    overflow: auto; 
+}
+
+#createAccount {
+  display: block;
+  margin: auto;
+}
+
+
+#login {
+  display: none;
+  margin: auto;
+}
+
+.form > *:first-child {
+  margin-top: 0;
+}
+
+.form > *:last-child {
+  margin-bottom: 0;
+}
+
+.formTitle {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.errorMessage {
+  text-align: center;
+  margin-top: 0.25rem;
+  margin-bottom: 0.rem;
+  font-size: 0.85rem;
+  color: var(--color-error);
+  display: none;
+}
+
+.formInput {
+  margin-bottom: 1rem;
+}
+
+.inputInfo {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  box-sizing: border-box;
+  border-radius: var(--border-radius);
+  border: 1px solid #dddddd;
+  outline: none;
+  background: #eeeeee;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.inputInfo:focus {
+  border-color: var(--color-primary);
+  background: #ffffff;
+}
+
+.inputInfo--error {
+  color: var(--color-error);
+  border-color: var(--color-error);
+}
+
+.formButton {
+  width: 100%;
+  padding: 1rem 2rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #ffffff;
+  border: none;
+  border-radius: var(--border-radius);
+  outline: none;
+  cursor: pointer;
+  background: var(--color-primary);
+}
+
+.formButton:hover {
+  background: var(--color-primary-dark);
+}
+
+.formButton:active {
+  transform: scale(0.98);
+}
+
+.formLinks {
+  text-align: center;
+  margin-top: 0.75rem;
+}
+
+.formLink {
+  color: var(--color-secondary);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.formLinks:hover {
+  text-decoration: underline;
+}
+
+#recipesList {
+  padding-inline-start: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 20px;
+}
+
+.recipe {
+  list-style-type: none;
+  background-color: #eaeaea;
+  border-radius: 3px;
+  padding: 10px 20px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+      'name image'
+      'house image';
+  text-align: left;
+}
+
+.recipe > h2 {
+  grid-area: name;
+  margin-bottom: 0px;
+}
+
+.recipe > p {
+  grid-area: house;
+  margin: 0;
+  margin-top: -18px;
+}
+
+.recipe > img {
+  max-height: 100px;
+  grid-area: image;
+}
+
+#searchBar {
+  width: 100%;
+  height: 32px;
+  border-radius: 3px;
+  border: 1px solid #eaeaea;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+#searchWrapper {
+  position: relative;
+}
+
+
+#searchWrapper::after {
+  content: '🔍';
+  position: absolute;
+  top: 7px;
+  right: 15px;
+}
+
+.btn{
+  background-color: #ffefd5;
+  border: none;
+}
+
+.btn img{
+  border-radius: 8px;
+}
+
+.btn p1{
+  vertical-align: middle;
+}
+
+

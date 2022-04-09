@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  head
+    script(src='/javascripts/recipes.js')
+  h2 Welcome to The <i> Only </i> Recipe App!
+  p Find and share everyday cooking inspiration.
+  
+  h3 Featured Recipes
+  //.column
+    img#recipeimg0(src = "", alt = "Recipe Image", style = "width:275px;height:183px")
+    p1#demo0
+  //.column
+    img#recipeimg1(src = "", alt = "Recipe Image", style = "width:275px;height:183px")
+    p1#demo1
+  //button#button1.btn(onclick= "" type='button')
+  .column
+    button#button0.btn(onclick= "" type='button')
+      a#link0.button(href='')
+        img#recipeimg0(src = "", alt = "Recipe Image", style = "width:275px;height:183px")
+        p1#demo0
+  .column
+    button#button1.btn(onclick= "" type='button')
+      a#link1.button(href='')
+        img#recipeimg1(src = "", alt = "Recipe Image", style = "width:275px;height:183px")
+        p1#demo1
+  .column 
+    button#button2.btn(onclick= "" type='button')
+      a#link2.button(href='')
+        img#recipeimg2(src = "", alt = "Recipe Image", style = "width:275px;height:183px")
+        p1#demo2

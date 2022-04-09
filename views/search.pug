@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  head
+    script(src='/javascripts/search.js')
+  h5 Search Results
+  .searchBar 
+    form(action='#')
+    input#searchBar(type='text' placeholder=' Search Recipes' name='searchBar')
+    button#search search
+    i.fa.fa-search(style='font-size: 18px;')
+    
+  h6 Search Recipes
+  .column
+    img#recipeimg5(src = "", alt = "Recipe Image", style = "width:275px;height:183px")
+    p1#demo5
+  .column
+    img#recipeimg6(src = "", alt = "Recipe Image", style = "width:275px;height:183px")
+    p1#demo6
